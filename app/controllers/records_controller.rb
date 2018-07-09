@@ -5,6 +5,8 @@ class RecordsController < ApplicationController
   # GET /records.json
   def index
     @records = Record.all
+    @records_by_date = @records.group_by(&:date)
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 
   # GET /records/1
