@@ -14,8 +14,8 @@ class RecordsTest < ApplicationSystemTestCase
     visit records_url
     click_on "New Record"
 
-    fill_in "Date", with: @record.date
     fill_in "Description", with: @record.description
+    fill_in "Time", with: @record.time
     fill_in "Title", with: @record.title
     click_on "Create Record"
 
@@ -27,8 +27,8 @@ class RecordsTest < ApplicationSystemTestCase
     visit records_url
     click_on "Edit", match: :first
 
-    fill_in "Date", with: @record.date
     fill_in "Description", with: @record.description
+    fill_in "Time", with: @record.time
     fill_in "Title", with: @record.title
     click_on "Update Record"
 

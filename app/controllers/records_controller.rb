@@ -1,11 +1,11 @@
 class RecordsController < ApplicationController
   before_action :set_record, only: [:show, :edit, :update, :destroy]
 
+
   # GET /records
   # GET /records.json
   def index
     @records = Record.all
-    @records_by_date = @records.group_by(&:date)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 
@@ -71,6 +71,6 @@ class RecordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def record_params
-      params.require(:record).permit(:title, :date, :description)
+      params.require(:record).permit(:title, :time, :description)
     end
 end
