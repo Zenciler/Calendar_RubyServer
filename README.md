@@ -25,4 +25,4 @@ Things you may want to cover:
 
 Heroku :
 
-https://dry-shelf-80919.herokuapp.com/records/new
+https://still-citadel-12331.herokuapp.com/
