@@ -30,7 +30,10 @@
     <%= form.label :recurring %>
     <%= form.number_field :recurring %>
   </div>
+  <div class="field">
+  <%= select_tag 'team_id', options_for_select(["Hafta da Bir", "Ayda Bir"]) %>
 
+  </div>
   <div class="actions">
     <%= form.submit %>
   </div>
