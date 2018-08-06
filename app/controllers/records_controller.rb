@@ -5,7 +5,11 @@ class RecordsController < ApplicationController
   # GET /records
   # GET /records.json
   def index
-    @records = Record.all
+    @records2 = Record.all
+
+    @search = RecordSearch.new(params[:search])
+    @records = @search.scope
+
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 

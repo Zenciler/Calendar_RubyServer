@@ -1,7 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Records</h1>
-
+<h1>
+<%= link_to 'Records', records_path %>
+</h1>
 <table>
   <thead>
     <tr>
@@ -11,6 +12,14 @@
       <th colspan="3"></th>
     </tr>
   </thead>
+
+
+  <%= form_tag records_path, method: :get do %>
+    <%= text_field_tag 'search[date_from]', @search.date_from %>
+    <%= text_field_tag 'search[date_to]', @search.date_to %>
+    <%= submit_tag 'Search', class: 'btn search-button' %>
+  <% end %>
+
 
   <tbody>
     <% @records.each do |record| %>
@@ -44,7 +53,7 @@
     <%= date.day %>
 
     <ul>
-      <% @records.each do |record| %>
+      <% @records2.each do |record| %>
         <% if String(record.time.strftime("%Y-%m-%d")) == String(date) %>
 
           <div id="recordsInCalendar">
